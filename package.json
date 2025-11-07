@@ -1,0 +1,17 @@
+{
+  "name": "nebula-nest-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "functions"
+  ],
+  "scripts": {
+    "build": "npm run -ws --if-present build",
+    "dev": "npm --workspace apps/landing run dev",
+    "lint": "npm run -ws --if-present lint",
+    "typecheck": "npm run -ws --if-present typecheck",
+    "clean": "npm run -ws --if-present clean",
+    "deploy:landing": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions"
+  }
+}
